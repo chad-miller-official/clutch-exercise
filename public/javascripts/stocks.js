@@ -2,7 +2,7 @@ $( document ).ready( init_stocks );
 
 var stock_price_socket = null;
 var refresh_timer      = null;
-var timer_countdown    = 11;
+var timer_countdown    = 10;
 
 function init_stocks()
 {
@@ -52,17 +52,7 @@ function retrieve_price( event )
             li_stock.find( 'span' ).text( stock_price_text );
 
         if( append_counter )
-        {
-            $( '#refresh_counter' ).append(
-                '<p>' +
-                    'Refreshing prices in ' +
-                    '<span id="refresh_counter_seconds">12</span>' +
-                    ' seconds.' +
-                '</p>'
-            );
-
             set_refresh_timer();
-        }
     }
 
     $( '#symbol' ).val( '' );
@@ -70,14 +60,22 @@ function retrieve_price( event )
 
 function set_refresh_timer()
 {
-    timer_countdown = 11;
+    timer_countdown = 10;
+
+    $( '#refresh_counter' ).replaceWith(
+        '<div id="refresh_counter">' +
+            'Refreshing prices in ' +
+            '<span id="refresh_counter_seconds">10</span>' +
+            ' seconds.' +
+        '</div>'
+    );
 
     refresh_timer = setInterval( () => {
         if( timer_countdown <= 0 )
         {
             clearInterval( refresh_timer );
-            $( '#refresh_counter_seconds' ).text( 'Refreshing...' );
 
+            $( '#refresh_counter' ).replaceWith( $( '<div id="refresh_counter">Refreshing...<p>' ) );
             $( '#stock_prices > li' ).each(
                 ( i, elem ) => stock_price_socket.send( $( elem ).attr( 'symbol' ).toUpperCase() )
             );
@@ -85,9 +83,7 @@ function set_refresh_timer()
             set_refresh_timer();
         }
         else
-        {
             $( '#refresh_counter_seconds' ).text( timer_countdown );
-        }
 
         timer_countdown -= 1;
     }, 1000 );
