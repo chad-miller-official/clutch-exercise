@@ -19,6 +19,7 @@ function init_stocks()
 function send_symbol()
 {
     stock_price_socket.send( $( '#symbol' ).val().toUpperCase() );
+    $( '#send_symbol' ).attr( 'disabled', true );
 }
 
 function retrieve_price( event )
