@@ -1,7 +1,7 @@
 @main("Stocks") {
   <label for="symbol">Ticker Symbol:</label>
   <input type="text" id="symbol" name="symbol">
-  <input type="button" value="Get Price" onclick="send_symbol()">
+  <input type="button" id="send_symbol" value="Get Price" onclick="send_symbol()" disabled>
   <div id="refresh_counter">
   </div>
   <ul id="stock_prices">

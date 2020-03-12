@@ -1,9 +1,20 @@
-var stock_price_socket           = new WebSocket( 'ws://localhost:9000/ws' );
+$( document ).ready( init_stocks );
+
+var stock_price_socket = null;
+var refresh_timer      = null;
+var timer_countdown    = 11;
+
+function init_stocks()
+{
+    stock_price_socket           = new WebSocket( 'ws://localhost:9000/ws' );
     stock_price_socket.onopen    = () => console.log( 'Local websocket opened.' );
     stock_price_socket.onmessage = retrieve_price;
 
-var refresh_timer   = null;
-var timer_countdown = 11;
+    $( '#symbol' ).on(
+        'change keyup paste mouseup',
+        ( event ) => $( '#send_symbol' ).attr( 'disabled', !$( '#symbol' ).val().length )
+    );
+}
 
 function send_symbol()
 {
