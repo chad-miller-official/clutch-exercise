@@ -1,0 +1,16 @@
+{
+  "name": "clutch-exercise",
+  "version": "1.1.0",
+  "description": "This is an extremely barebones stock price web app written in Scala, Play, and React.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eon8ight/clutch-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eon8ight/clutch-exercise/issues"
+  },
+  "homepage": "https://github.com/eon8ight/clutch-exercise#readme"
+}
