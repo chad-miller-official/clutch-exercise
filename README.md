@@ -14,7 +14,7 @@ What you cannot do:
 
 ## How to Run (on Ubuntu)
 
-This web app was tested locally on Ubuntu 18.04, OpenJDK version 11, sbt version 1.3.8, and npm version 3.5.2.
+This web app was tested locally on Ubuntu 18.04, OpenJDK version 11, and sbt version 1.3.8.
 
 1. Ensure OpenJDK is installed on your machine. If it is not, run `sudo apt update && sudo apt install default-jdk`.
 2. Ensure sbt is installed on your machine. If it is not, run the following commands:
@@ -24,7 +24,5 @@ curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89
 sudo apt-get update
 sudo apt-get install sbt
 ```
-3. Ensure Node.js is installed on your machine. If it is not, run `npm init -y`.
-4. Ensure Babel and `babel-preset-react-app` are both installed. If they are not, run `npm install babel-cli@6 babel-preset-react-app@3`.
-5. Within the root directory of this repository, run `sbt run`.
-6. Navigate to `http://localhost:9000/`. You should be greeted with a tiny UI allowing you to enter a ticker symbol into the input box. To ensure everything is working as expected, enter a symbol, such as AAPL or GOOG. The symbol and its price should be appended to a list underneath the input box, and a countdown timer to the next price refresh should also appear underneath the input box.
+3. Within the root directory of this repository, run `sbt run`.
+4. Navigate to `http://localhost:9000/`. You should be greeted with a tiny UI allowing you to enter a ticker symbol into the input box. To ensure everything is working as expected, enter a symbol, such as AAPL or GOOG. The symbol and its price should be appended to a list underneath the input box, and a countdown timer to the next price refresh should also appear underneath the input box.
