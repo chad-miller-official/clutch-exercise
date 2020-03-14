@@ -43,7 +43,7 @@ class StocksWebSocketActor(out: ActorRef) extends Actor {
 @Singleton
 class StocksController @Inject()(val controllerComponents: ControllerComponents)(implicit system: ActorSystem, mat: Materializer) extends BaseController {
   def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.stocks())
+    Ok(views.html.main())
   }
 
   def socket = WebSocket.accept[String, String] { request =>

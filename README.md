@@ -2,7 +2,7 @@
 
 This is an extremely barebones stock price web app written in:
 * Scala using the Play framework, for the server
-* React.js, for the client
+* React.js and Material-UI, for the client
 
 What you can do:
 * Add ticker symbols to a list
@@ -24,5 +24,5 @@ curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89
 sudo apt-get update
 sudo apt-get install sbt
 ```
-3. Within the root directory of this repository, run `sbt run`.
+3. Within the root directory of this repository, run `npm run start`.
 4. Navigate to `http://localhost:9000/`. You should be greeted with a tiny UI allowing you to enter a ticker symbol into the input box. To ensure everything is working as expected, enter a symbol, such as AAPL or GOOG. The symbol and its price should be appended to a list underneath the input box, and a countdown timer to the next price refresh should also appear underneath the input box.

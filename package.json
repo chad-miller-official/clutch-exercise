@@ -1,7 +1,16 @@
 {
   "name": "clutch-exercise",
-  "version": "1.1.0",
-  "description": "This is an extremely barebones stock price web app written in Scala, Play, and React.",
+  "version": "1.2.0",
+  "description": "This is an extremely barebones stock price web app written in Scala using the Play framework for the server, and React.js for the client",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "sbt run",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eon8ight/clutch-exercise.git"
@@ -12,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/eon8ight/clutch-exercise/issues"
   },
-  "homepage": "https://github.com/eon8ight/clutch-exercise#readme"
+  "homepage": "https://github.com/eon8ight/clutch-exercise#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
